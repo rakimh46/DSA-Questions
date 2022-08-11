@@ -27,31 +27,27 @@ class Solution
                  int s=i;
                  int e=0;
                  int wt=Integer.MAX_VALUE;
-                 dfs(mp,vis,i,e,wt,i,ans);
+                 dfs(mp,vis,i,i,e,wt,ans);
              }
-             
-             
          }
          Collections.sort(ans,(A,B)->{return A.get(0)-B.get(0);});
          return ans;
      }
      
-     void dfs(HashMap<Integer,ArrayList<Pair>> mp,boolean[] vis,int i,int e,int wt,int from,ArrayList<ArrayList<Integer>> ans){
+     void dfs(HashMap<Integer,ArrayList<Pair>> mp,boolean[] vis,int i,int housein,int houseout,int wt,ArrayList<ArrayList<Integer>> ans){
          vis[i]=true;
          ArrayList<Pair> x=mp.getOrDefault(i,new ArrayList<>());
          for(Pair neighbour:x){
              if(!vis[neighbour.home]){
-                 e=neighbour.home;
-                dfs(mp,vis,neighbour.home,e,Math.min(wt,neighbour.dia),from,ans);
+                dfs(mp,vis,neighbour.home,housein,neighbour.home,Math.min(wt,neighbour.dia),ans);
              } 
          }
          if(x.size()==0){
                 ArrayList<Integer> temp=new ArrayList<Integer>();
-                temp.add(from);
-                temp.add(e);
+                temp.add(
+                temp.add(houseout);
                 temp.add(wt);
                 ans.add(temp);
          }
      }
-     
 } 
