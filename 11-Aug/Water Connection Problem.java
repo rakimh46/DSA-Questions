@@ -29,6 +29,8 @@ class Solution
                  int wt=Integer.MAX_VALUE;
                  dfs(mp,vis,i,i,e,wt,ans);
              }
+             
+
          }
          Collections.sort(ans,(A,B)->{return A.get(0)-B.get(0);});
          return ans;
@@ -44,10 +46,11 @@ class Solution
          }
          if(x.size()==0){
                 ArrayList<Integer> temp=new ArrayList<Integer>();
-                temp.add(
+                temp.add(housein);
                 temp.add(houseout);
                 temp.add(wt);
                 ans.add(temp);
          }
      }
+     
 } 
