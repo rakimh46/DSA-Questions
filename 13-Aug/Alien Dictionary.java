@@ -1,7 +1,6 @@
 //https://practice.geeksforgeeks.org/problems/alien-dictionary/1
 class Solution
 {
-    public String ans = "";
     public static ArrayList<ArrayList<Integer>> graph;
     public String findOrder(String [] words, int N, int K)
     {
@@ -44,9 +43,11 @@ class Solution
             }
         }
         
+        StringBuilder ans=new StringBuilder();
         while(qu.size()>0){
             int x=qu.remove();
-            ans = ans + (char)(x + 'a');
+            char ch=(char)(x+'a');
+            ans.append(ch);
             for(int xx:graph.get(x)){
                 indeg[xx]--;
                 if(indeg[xx]==0){
@@ -54,7 +55,7 @@ class Solution
                 }
             }
         }
-        return ans;
+        // System.out.println(ans);
+        return ans.toString();
     }
-}
-
+}  
