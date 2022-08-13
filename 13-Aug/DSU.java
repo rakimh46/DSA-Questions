@@ -1,30 +1,34 @@
-class UnionFind{
-        int[]par;
-        int count;
-        UnionFind(int n){
-            par=new int[n];
-            for(int i=0;i<n;i++){
-                par[i]=i;
-            }
-            count=n;
-        }
-        
-        void union(int u,int v){
-            int pt1=find(u);
-            int pt2=find(v);
-            if(pt1!=pt2){
-                par[pt2]=pt1;
-                count--;
-            }
-        }
-        
-        int find(int x){
-            if(x==par[x]) return x;
-            return par[x]=find(par[x]);
+class UF {
+    int[] parent;
+    int[] rank;
+    
+    UF(int n) {
+        parent = new int[n];
+        rank = new int[n];
+        for(int i=0;i<n;i++){
+                parent[i]=i;
+                rank[i]=1;
         }
     }
-}
-
-class solution{
-  UnionFind uf=new UnionFind(n);
+        
+    public int find(int p) {
+        while (p != parent[p]) {
+            parent[p] = parent[parent[p]];
+            p = parent[p];
+        }
+        return p;
+    }
+    
+    public void union(int p, int q) {
+        int pr = find(p);
+        int qr = find(q);
+        if (pr == qr) return;
+        
+        if (rank[pr] < rank[qr]) {
+            parent[pr] = qr;
+        } else {
+            parent[qr] = pr;
+            if (rank[pr] == rank[qr]) rank[pr]++;
+        }
+    }
 }
