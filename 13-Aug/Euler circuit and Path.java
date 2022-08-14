@@ -22,4 +22,24 @@ class Solution
 1 graph contains Eulerian Path 
 2 graph contains Eulerian Circuit 
 0 otherwise.
+    
+class Solution
+{
+    public int isPossible(int[][] paths)
+    {
+        // Code here
+        int result = 0;
+        if(paths.length == 1) return 1;
+        for(int i = 0; i < paths.length; i++){
+            result = 0;
+            for(int j = 0; j < paths[i].length; j++){
+                if(paths[i][j] == 1) result++;
+            }
+            if(result == 0 || result%2 != 0){
+                return 0;
+            }
+        }
+        return 1;
+    }
+}
 
