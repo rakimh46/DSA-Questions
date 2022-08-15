@@ -1,6 +1,6 @@
 https://leetcode.com/problems/critical-connections-in-a-network/
 
-Articulation Point topic
+Articulation Bridge topic
 
 class Solution {
     static int[] dis;
