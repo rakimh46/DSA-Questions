@@ -1,3 +1,4 @@
+https://practice.geeksforgeeks.org/problems/recursively-remove-all-adjacent-duplicates0744/1
 class Solution{
     String rremove(String s){
         if(s.length()==0) return s;
