@@ -1,4 +1,4 @@
-//https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
 class Solution
 {
     //Function to find the shortest distance of all the vertices
