@@ -1,3 +1,4 @@
+https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1
 class solve {
     // Function to determine if graph can be coloured with at most M colours
     // such
