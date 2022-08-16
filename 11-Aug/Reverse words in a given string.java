@@ -1,12 +1,9 @@
-class Solution 
-{
-    //Function to reverse words in a given string.
-    String reverseWords(String S)
-    {
-        // code here 
-        String[] words=S.split("\\.");
+https://leetcode.com/problems/reverse-words-in-a-string/
+class Solution {
+    public String reverseWords(String s) {
+        String[] words = s.trim().split(" +");
         Collections.reverse(Arrays.asList(words));
-        return String.join(".",words);
+        return String.join(" ", words);
     }
 }
 
