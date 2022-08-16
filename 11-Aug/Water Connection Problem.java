@@ -1,3 +1,4 @@
+https://practice.geeksforgeeks.org/problems/water-connection-problem5822/1
 class Solution 
 { 
     class Pair{
