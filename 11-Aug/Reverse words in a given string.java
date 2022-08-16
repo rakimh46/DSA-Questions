@@ -9,38 +9,34 @@ class Solution {
 
 2nd way
 
-class Solution 
-{
-    //Function to reverse words in a given string.
-    String reverseWords(String S)
-    {
-        // code here 
+class Solution {
+    public String reverseWords(String s) {
+        StringBuilder sb=new StringBuilder();
         Stack<String> st=new Stack<>();
         
-        StringBuilder sb=new StringBuilder("");
-        
-        for(int i=0;i<S.length();i++){
-            char ch=S.charAt(i);
-            if(ch!='.'){
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(ch!=' '){
                 sb.append(ch);
-            }
-            if(ch=='.'){
-                String str=sb.toString();
-                st.push(str);
-                sb.delete(0,sb.length());
+            }else{
+                if(sb.length()>0){
+                    st.push(sb.toString());
+                    sb=new StringBuilder();
+                }
             }
         }
-        String str=sb.toString();
-        st.push(str);
-        sb.delete(0,sb.length());
+        
+        if(sb.length()>0){
+            st.push(sb.toString());
+        }
+        sb=new StringBuilder();
+        
         while(st.size()>1){
-            str=st.pop();
-            sb.append(str);
-            sb.append(".");
+            sb.append(st.pop());
+            sb.append(" ");
         }
-        str=st.pop();
-        sb.append(str);
+        sb.append(st.pop());
+        
         return sb.toString();
     }
 }
-
