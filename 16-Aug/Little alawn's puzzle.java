@@ -1,6 +1,7 @@
 https://codeforces.com/problemset/problem/1534/C
 https://chowdera.com/2022/03/202203272312512816.html
 
+// Working program with FastReader
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -73,20 +74,23 @@ public class Main {
 		    for(int i=0;i<n;i++){
 		        arr2[i]=s.nextInt();
 		    }
-		    int count=slove(arr1,arr2);
-		    System.out.println(power(2,count));
+		    long count=slove(arr1,arr2);
+		    System.out.println(quickpow(2,count));
 		}
 	}
-	static int mod1=1000000007;
-	static int power(int x,int n){
-    if(n==0)       return 1;
-    else if(n==1)  return x;
-    else if(n%2==1)   return (x*power((x*x)%mod1,n/2))%mod1;
-    else           return (power((x*x)%mod1,n/2));
-	    
-	}
+	static long mod1=1000000007;
 	
-	public static int slove(int[] arr1,int[] arr2){
+	static long quickpow(long base,long pow){
+        long ans=1;
+    
+        while(pow-->0)
+        {
+            ans=(ans*base)%mod1;
+        }
+        return ans%mod1;
+    }
+	
+	public static long slove(int[] arr1,int[] arr2){
 	    ArrayList<ArrayList<Integer>> graph=new ArrayList<>();
 	    int n=arr1.length;
 	    for(int i=0;i<=n;i++){
@@ -98,7 +102,7 @@ public class Main {
 	    }
 	    
 	    boolean[]vis=new boolean[n+1];
-	    int count=0;
+	    long count=0;
 	    for(int i=1;i<=n;i++){
 	        if(!vis[i]){
 	            count++;
