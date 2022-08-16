@@ -1,4 +1,4 @@
-//https://practice.geeksforgeeks.org/problems/hamiltonian-path2522/1
+https://practice.geeksforgeeks.org/problems/hamiltonian-path2522/1
 class Solution 
 { 
    boolean check(int N, int M, ArrayList<ArrayList<Integer>> Edges) 
