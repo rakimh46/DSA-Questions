@@ -1,1 +1,12 @@
+//
 Count sort take less Time complexity
+
+//
+public String swap(String a,int i,int j){
+        StringBuilder sb=new StringBuilder(a);
+        sb.setCharAt(i,a.charAt(j));
+        sb.setCharAt(j,a.charAt(i));
+        return sb.toString();
+}
+
+//
