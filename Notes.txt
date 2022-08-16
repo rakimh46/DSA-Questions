@@ -10,3 +10,11 @@ public String swap(String a,int i,int j){
 }
 
 //
+String s
+split  this function convert string into array  s.spilt(" ");
+
+delete all space in a string   s.trim()split(" +");
+
+trim is used for first and last space delete
+
+
