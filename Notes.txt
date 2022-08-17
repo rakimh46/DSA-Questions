@@ -17,4 +17,15 @@ delete all space in a string   s.trim()split(" +");
 
 trim is used for first and last space delete
 
+//
+int[][]dp=new int[n][n];
+for(int[]r:dp){
+Arrays.fill(r,-1);
+}
+
+//
+
+
+
+
 
